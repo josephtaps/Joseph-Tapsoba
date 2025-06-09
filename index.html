@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Simple Aviator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .header-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: gold;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .cash-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: red;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #38bdf8;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    #signal {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      background-color: #22c55e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #16a34a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      #signal {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-name">JOSEPH TAPSOBA</div>
+  <div class="cash-title">COUP DE CASH</div>
+  <div class="title">PRÉDICTEUR AVIATOR</div>
+  <button onclick="showSignal()">Obtenir le Signal</button>
+  <div id="signal">SIGNAL : x1.94</div>
+
+  <script>
+    function showSignal() {
+      const btn = document.querySelector('button');
+      const signal = document.getElementById("signal");
+      btn.disabled = true;
+      btn.innerText = "Analyse en cours...";
+      setTimeout(() => {
+        signal.style.display = "block";
+        btn.innerText = "Obtenir le Signal";
+        btn.disabled = false;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
